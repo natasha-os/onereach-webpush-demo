@@ -6,5 +6,22 @@
   <body>
     <h1>Hello from My WebPush Demo!</h1>
     <p>If you see this, your site is live 🚀</p>
+
+    
+<!-- OneSignal Web Push SDK -->
+<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script>
+  window.OneSignal = window.OneSignal || [];
+  OneSignal.push(function() {
+    OneSignal.init({
+      appId: "YOUR-APP-ID-HERE",  // Replace with the App ID from OneSignal
+      notifyButton: {
+        enable: true, // Shows the bell widget
+      },
+    });
+  });
+</script>
+
+    
   </body>
 </html>
