@@ -8,20 +8,15 @@
     <p>If you see this, your site is live 🚀</p>
 
     
-<!-- OneSignal Web Push SDK -->
-<script src="https://cdn.onesignal.com/sdks/OneSignalSDK.js" async=""></script>
+<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
 <script>
-  window.OneSignal = window.OneSignal || [];
-  OneSignal.push(function() {
-    OneSignal.init({
-      appId: "9889aad4-afa3-4225-8d57-470ad760ebd9",  // Replace with the App ID from OneSignal
-      notifyButton: {
-        enable: true, // Shows the bell widget
-      },
+  window.OneSignalDeferred = window.OneSignalDeferred || [];
+  OneSignalDeferred.push(async function(OneSignal) {
+    await OneSignal.init({
+      appId: "9889aad4-afa3-4225-8d57-470ad760ebd9",
     });
   });
 </script>
-
     
   </body>
 </html>
