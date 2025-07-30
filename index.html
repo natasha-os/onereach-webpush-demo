@@ -1,24 +1,24 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8">
-  <title>Web Push Demo</title>
-  <link rel="manifest" href="manifest.json">
+    <meta charset="UTF-8">
+    <title>Web Push Demo</title>
+    <link rel="manifest" href="manifest.json">
   </head>
   <body>
     <h1>Hello from My WebPush Demo!</h1>
     <p>If you see this, your site is live 🚀</p>
 
-    
-<script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
-<script>
-  window.OneSignalDeferred = window.OneSignalDeferred || [];
-  OneSignalDeferred.push(async function(OneSignal) {
-    await OneSignal.init({
-      appId: "9889aad4-afa3-4225-8d57-470ad760ebd9",
-    });
-  });
-</script>
-    
+    <!-- OneSignal SDK -->
+    <script src="https://cdn.onesignal.com/sdks/web/v16/OneSignalSDK.page.js" defer></script>
+    <script>
+      window.OneSignalDeferred = window.OneSignalDeferred || [];
+      OneSignalDeferred.push(async function(OneSignal) {
+        await OneSignal.init({
+          appId: "9889aad4-afa3-4225-8d57-470ad760ebd9",
+          serviceWorkerPath: "OneSignalSDKWorker.js", // 👈 add this
+        });
+      });
+    </script>
   </body>
 </html>
